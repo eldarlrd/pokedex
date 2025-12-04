@@ -1,4 +1,5 @@
 import '@/App.css';
+import '@fontsource-variable/rubik';
 import Footer from '@/banners/Footer.ts';
 import Header from '@/banners/Header.ts';
 

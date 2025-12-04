@@ -2,6 +2,7 @@
   "version": "5",
   "specifiers": {
     "npm:@biomejs/biome@2.3.8": "2.3.8",
+    "npm:@fontsource-variable/rubik@^5.2.8": "5.2.8",
     "npm:@rsbuild/core@^1.6.12": "1.6.12_@swc+helpers@0.5.17",
     "npm:@types/jquery@^3.5.33": "3.5.33",
     "npm:axios@^1.13.2": "1.13.2",
@@ -82,6 +83,9 @@
       "dependencies": [
         "tslib"
       ]
+    },
+    "@fontsource-variable/rubik@5.2.8": {
+      "integrity": "sha512-vGDExLzB4a2Fj9mca5LqNoA2ZKcU9o+x5FEBLte/nxYkCB9hOQwZS6ZlItUv+Ssn7YMzKauGuI/Po+YueFuZbg=="
     },
     "@module-federation/error-codes@0.21.6": {
       "integrity": "sha512-MLJUCQ05KnoVl8xd6xs9a5g2/8U+eWmVxg7xiBMeR0+7OjdWUbHwcwgVFatRIwSZvFgKHfWEiI7wsU1q1XbTRQ=="
@@ -642,6 +646,7 @@
     "packageJson": {
       "dependencies": [
         "npm:@biomejs/biome@2.3.8",
+        "npm:@fontsource-variable/rubik@^5.2.8",
         "npm:@rsbuild/core@^1.6.12",
         "npm:@types/jquery@^3.5.33",
         "npm:axios@^1.13.2",
