@@ -1,12 +1,13 @@
 :root {
-  --pokedex-blue: #3b4cca;
-  --pokedex-cyan: #22c4ea;
+  --pokedex-black: hsl(0, 0%, 17.25%);
+  --pokedex-blue: hsl(232.87, 57.43%, 51.18%);
+  --pokedex-cyan: hsl(191.4, 82.64%, 52.55%);
 
-  --pokedex-red: #d30a40;
+  --pokedex-red: hsl(343.88, 90.95%, 43.33%);
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  --pokedex-white: #e3e3e3;
-  --pokedex-yellow: #ffde00;
+  --pokedex-white: hsl(0, 0%, 89.02%);
+  --pokedex-yellow: hsl(52.24, 100%, 50%);
 }
 
 section {
@@ -19,11 +20,43 @@ footer {
   user-select: none;
 
   #pokeball {
-    background: var(--pokedex-white);
+    background: linear-gradient(
+      to bottom,
+      var(--pokedex-red) 0%,
+      var(--pokedex-red) 50%,
+      var(--pokedex-white) 50%,
+      var(--pokedex-white) 100%
+    );
     border-radius: 100%;
-    color: var(--pokedex-red);
+    color: transparent;
+    position: relative;
     text-shadow: none;
     vertical-align: sub;
+
+    &::before {
+      background: var(--pokedex-black);
+      content: '';
+      height: 0.25rem;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      background: var(--pokedex-white);
+      border: 1px solid var(--pokedex-black);
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--pokedex-white);
+      content: '';
+      height: 0.5rem;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 0.5rem;
+    }
   }
 
   & > span {
