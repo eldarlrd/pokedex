@@ -1,0 +1,21 @@
+{
+	"name": "Pokédex",
+	"short_name": "Pokédex",
+	"dir": "ltr",
+	"lang": "en",
+	"categories": ["entertainment", "games", "kids"],
+	"display": "fullscreen",
+	"orientation": "natural",
+	"theme_color": "#d30a40",
+	"background_color": "#14161a",
+	"description": "A Pokémon search app",
+	"start_url": "https://eldarlrd.github.io/pokedex/",
+	"icons": [
+		{
+			"src": "favicon.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		}
+	]
+}
