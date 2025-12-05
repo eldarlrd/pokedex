@@ -5,9 +5,12 @@
 > Pokédex is a simple search app made with
 > - **[TypeScript](https://typescriptlang.org)**
 > - **[jQuery v4](https://jquery.com)**
-> - **[Bulma](https://bulma.io)**
-> - **[Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons)**
 > - **[Axios](https://axios-http.com)**
+> - **[Vest](https://vestjs.dev)**
+> - **[Jasmine](https://jasmine.github.io)**
+> - **[Bulma](https://bulma.io)**
+> - **[Fontsource](https://fontsource.org)**
+> - **[Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons)**
 > - **[Rsbuild](https://rsbuild.rs)**
 > - **[Deno](https://deno.com)**
 > 
