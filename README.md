@@ -37,6 +37,15 @@ deno run preview
 ```sh
 deno run check
 ```
+### See Orphans (Knip)
+```sh
+deno run orphans
+```
+## Test
+### Run Watch
+```sh
+deno run spec
+```
 ## Deploy
 ```sh
 deno run deployer

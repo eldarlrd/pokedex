@@ -1,6 +1,6 @@
 {
   "name": "pokedex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
   "keywords": [
@@ -16,8 +16,10 @@
     "dev": "rsbuild dev --open",
     "build": "rsbuild build",
     "preview": "rsbuild preview",
+    "spec": "jasmine",
     "deployer": "deno run build && gh-pages -b prod -m 'build(prod): deployment' -d dist",
-    "check": "biome check --write"
+    "check": "biome check --write",
+    "orphans": "knip --cache"
   },
   "dependencies": {
     "@fontsource-variable/rubik": "^5.2.8",
@@ -31,6 +33,7 @@
     "@types/jquery": "^3.5.33",
     "gh-pages": "^6.3.0",
     "jasmine": "^5.13.0",
+    "knip": "^5.71.0",
     "typescript": "^5.9.3"
   }
 }
