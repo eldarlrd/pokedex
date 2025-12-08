@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer(): string {
   return `
     <footer class='is-size-5'>
       © 2025

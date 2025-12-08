@@ -92,6 +92,9 @@
         "useValidAriaRole": "error",
         "useValidAriaValues": "error",
         "useValidLang": "error"
+      },
+      "performance": {
+        "noAccumulatingSpread": "off"
       }
     }
   }

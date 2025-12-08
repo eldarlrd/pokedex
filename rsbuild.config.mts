@@ -2,6 +2,9 @@ import { defineConfig } from '@rsbuild/core';
 
 // https://rsbuild.rs/config
 export default defineConfig({
+  dev: {
+    hmr: false
+  },
   server: {
     base: '/pokedex/'
   },
