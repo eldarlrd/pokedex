@@ -1,4 +1,4 @@
-export default function normalize(input: string): string {
+export default function normalizeName(input: string): string {
   return input
     .toLowerCase()
     .trim()
