@@ -1,3 +1,5 @@
-export default function Search(): string {
-  return ``;
-}
+const Search = (): string => `
+
+`;
+
+export default Search;

@@ -1,6 +1,6 @@
 import type { Camelize } from '@/models/pokemon.model.ts';
 
-export default function toCamel<T>(obj: unknown): Camelize<T> {
+const toCamel = <T>(obj: unknown): Camelize<T> => {
   if (obj === null || typeof obj !== 'object') return obj as Camelize<T>;
 
   if (Array.isArray(obj))
@@ -18,4 +18,6 @@ export default function toCamel<T>(obj: unknown): Camelize<T> {
   });
 
   return result as unknown as Camelize<T>;
-}
+};
+
+export default toCamel;

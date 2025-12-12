@@ -7,7 +7,7 @@ import toCamel from '@/utils/toCamel';
 
 const PROXY_BASE_URL = 'https://pokeapi-proxy.freecodecamp.rocks/api/pokemon';
 
-export default async function (inputName: string): Promise<Pokemon> {
+const PokemonService = async (inputName: string): Promise<Pokemon> => {
   try {
     const formattedName = normalizeName(inputName);
     const { data } = await axios.get<PokemonRaw>(
@@ -33,4 +33,6 @@ export default async function (inputName: string): Promise<Pokemon> {
 
     throw error;
   }
-}
+};
+
+export default PokemonService;

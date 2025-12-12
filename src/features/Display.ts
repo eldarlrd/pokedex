@@ -1,3 +1,5 @@
-export default function Display(): string {
-  return ``;
-}
+const Display = (): string => `
+
+`;
+
+export default Display;

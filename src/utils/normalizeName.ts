@@ -1,8 +1,9 @@
-export default function normalizeName(input: string): string {
-  return input
+const normalizeName = (input: string): string =>
+  input
     .toLowerCase()
     .trim()
     .replace(/[\s_]+/g, '-')
     .replace(/[^\w-]/g, '')
     .replace(/-+/g, '-');
-}
+
+export default normalizeName;
