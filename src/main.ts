@@ -19,7 +19,11 @@
  */
 
 import App from '@/App';
+import bindSearch from '@/utils/bindSearch.ts';
 
 const rootEl = document.getElementById('root');
 
-if (rootEl) rootEl.innerHTML = App();
+if (rootEl) {
+  rootEl.innerHTML = App();
+  bindSearch();
+}

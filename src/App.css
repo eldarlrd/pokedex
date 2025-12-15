@@ -1,5 +1,6 @@
 @import url('styles/_variables.css');
 @import url('styles/Banners.css');
+@import url('styles/Features.css');
 
 :root {
   scroll-behavior: smooth;
