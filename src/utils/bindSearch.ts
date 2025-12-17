@@ -1,6 +1,10 @@
 import $ from 'jquery';
+import { resetDisplay, showError, showPokemon } from '@/features/Display.ts';
 import getPokemon from '@/services/getPokemon.ts';
 import normalizeName from '@/utils/normalizeName.ts';
+
+// Avoid duplicate requests
+let lastNormalizedQuery: string | null = null;
 
 const bindSearch = (): void => {
   const toggleButtonState = () => {
@@ -24,6 +28,10 @@ const bindSearch = (): void => {
       const inputName = $('#search-input').val()?.toString();
       if (!inputName) return;
 
+      const normalized = normalizeName(inputName);
+
+      if (normalized && normalized === lastNormalizedQuery) return;
+
       const button = $('#search-form button[type="submit"]');
       const icon = button.find('.material-icons');
       const originalIcon = icon.text();
@@ -31,8 +39,14 @@ const bindSearch = (): void => {
       try {
         button.prop('disabled', true);
         icon.text('hourglass_bottom').addClass('is-rotating');
+        resetDisplay();
 
-        await getPokemon(normalizeName(inputName));
+        lastNormalizedQuery = normalized;
+
+        const pokemon = await getPokemon(normalized);
+        showPokemon(pokemon);
+      } catch (error: unknown) {
+        if (error instanceof Error) showError(error.message);
       } finally {
         icon.removeClass('is-rotating').text(originalIcon);
 

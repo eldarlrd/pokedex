@@ -4,6 +4,265 @@
   }
 }
 
+/* Display (results) */
+#display {
+  background: var(--pokedex-white); /* inverted to grey screen */
+  border: 1px solid var(--pokedex-black);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0 0 var(--pokedex-black);
+  color: var(--pokedex-black); /* inverted text color */
+  margin-bottom: 0.75rem;
+  margin-inline: auto;
+  min-height: 0;
+  opacity: 0;
+  padding: 0.75rem;
+  /* Keep a consistent screen width and a small initial height */
+  transform: translateY(1rem);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+  width: min(44rem, 100%);
+
+  /* Collapsed by default until content is shown */
+  &:not(.is-active) {
+    border-width: 0;
+    box-shadow: none;
+    height: 0;
+    margin-bottom: 0;
+    min-height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  &.is-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  & .display-title {
+    align-items: baseline;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    user-select: none;
+
+    & .title-left {
+      align-items: baseline;
+      display: inline-flex;
+      gap: 0.5rem;
+    }
+
+    & .pokemon-name {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    & .pokemon-xp {
+      align-items: center;
+      color: color-mix(in oklab, var(--pokedex-black), transparent 35%);
+      display: inline-flex;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      gap: 0.25rem;
+
+      & .material-icons {
+        color: var(--pokedex-blue-deep);
+        font-size: 1rem;
+        line-height: 1;
+      }
+    }
+
+    & .pokemon-id {
+      color: color-mix(in oklab, var(--pokedex-black), transparent 50%);
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  & .display-content {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 28rem) {
+      align-items: start;
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  & .sprite-wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    justify-content: center;
+
+    & .sprite {
+      background: var(--pokedex-white);
+      border: 1px solid var(--pokedex-black);
+      border-radius: 0.5rem;
+      height: 9rem;
+      image-rendering: pixelated;
+      max-width: 9rem;
+      padding: 0.5rem;
+    }
+
+    & .types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      justify-content: center;
+      margin-top: 0.125rem;
+      width: 100%;
+
+      & .type-chip {
+        background: var(--pokedex-orange-deep);
+        border: 1px solid var(--pokedex-orange-deep);
+        border-radius: 999px;
+        color: var(--pokedex-white);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.125rem 0.5rem;
+      }
+    }
+  }
+
+  & .stats {
+    display: grid;
+    gap: 0.375rem;
+    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+
+    @media (min-width: 32rem) {
+      grid-template-columns: repeat(3, minmax(10rem, 1fr));
+    }
+
+    & .stat {
+      align-items: center;
+      background: var(--pokedex-gray);
+      border: 1px solid var(--pokedex-black);
+      border-radius: 0.5rem;
+      display: grid;
+      gap: 0.25rem;
+      grid-template-columns: auto 1fr auto;
+      padding: 0.375rem 0.5rem;
+
+      & .stat-icon {
+        color: var(--pokedex-blue);
+      }
+
+      & .stat-label {
+        color: color-mix(in oklab, var(--pokedex-black), transparent 25%);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      & .stat-value {
+        color: var(--pokedex-black);
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+      }
+    }
+
+    /* Base stats layout: number first, label below, icon on the left */
+    & .stat.stat--base {
+      align-items: start;
+      grid-template-areas:
+        'icon value'
+        'icon label';
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+    }
+
+    & .stat.stat--base .stat-icon {
+      grid-area: icon;
+    }
+    & .stat.stat--base .stat-value {
+      font-size: 1.1rem;
+      grid-area: value;
+      justify-self: start; /* Move numbers to the left to make badges narrower */
+      line-height: 1;
+    }
+    & .stat.stat--base .stat-label {
+      color: color-mix(in oklab, var(--pokedex-black), transparent 40%);
+      font-size: 0.75rem;
+      grid-area: label;
+    }
+
+    /* Meta stats (height/weight/exp) look different and more neutral */
+    & .stat.stat--meta .stat-icon {
+      color: color-mix(in oklab, var(--pokedex-black), transparent 35%);
+    }
+    & .stat.stat--meta .stat-label {
+      color: color-mix(in oklab, var(--pokedex-black), transparent 45%);
+      font-weight: 500;
+    }
+    & .stat.stat--meta .stat-value {
+      font-weight: 600;
+    }
+
+    /* Per-stat icon colors */
+    & .stat.stat--hp .stat-icon {
+      color: var(--pokedex-red);
+    }
+    & .stat.stat--attack .stat-icon {
+      color: color-mix(in oklab, var(--pokedex-red), var(--pokedex-yellow) 55%);
+    }
+    & .stat.stat--defense .stat-icon {
+      color: var(--pokedex-cyan);
+    }
+    & .stat.stat--special-attack .stat-icon {
+      color: var(--pokedex-purple);
+    }
+    & .stat.stat--special-defense .stat-icon {
+      color: var(--pokedex-green);
+    }
+    & .stat.stat--speed .stat-icon {
+      color: var(--pokedex-yellow);
+    }
+  }
+
+  /* Footer meta (height/weight) placed at the bottom-right, not as badges */
+  & .display-footer {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 0.25rem;
+
+    & .meta {
+      align-items: center;
+      color: color-mix(in oklab, var(--pokedex-black), transparent 55%);
+      display: inline-flex;
+      font-weight: 600;
+      gap: 0.25rem;
+
+      & .material-icons {
+        color: color-mix(in oklab, var(--pokedex-black), transparent 60%);
+        font-size: 1rem;
+        line-height: 1;
+      }
+
+      & .meta-value {
+        color: var(--pokedex-black);
+        font-variant-numeric: tabular-nums;
+      }
+    }
+  }
+
+  &.is-error {
+    & .display-error {
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      min-height: 3rem;
+
+      & .material-icons {
+        color: var(--pokedex-red);
+      }
+    }
+  }
+}
+
 form {
   display: flex;
   gap: 0.375rem;

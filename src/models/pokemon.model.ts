@@ -9,6 +9,15 @@ type Camelize<T> =
       ? { [K in keyof T as CamelCase<K & string>]: Camelize<T[K]> }
       : T;
 
+interface PokemonStats {
+  hp: 'HP';
+  attack: 'ATK';
+  defense: 'DEF';
+  speed: 'SPD';
+  'special-attack': 'SpA';
+  'special-defense': 'SpD';
+}
+
 interface PokemonRaw {
   id: number;
   name: string;
@@ -29,4 +38,4 @@ interface PokemonRaw {
 
 type Pokemon = Camelize<PokemonRaw>;
 
-export type { Camelize, PokemonRaw, Pokemon };
+export type { Camelize, PokemonRaw, Pokemon, PokemonStats };

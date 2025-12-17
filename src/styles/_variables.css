@@ -1,9 +1,15 @@
 :root {
   --pokedex-black: hsl(0, 0%, 17.25%);
   --pokedex-blue: hsl(232.87, 57.43%, 51.18%);
+  --pokedex-blue-deep: hsl(232.87, 65%, 38%);
   --pokedex-cyan: hsl(191.4, 82.64%, 52.55%);
-  --font-family: 'Rubik Variable';
 
+  --font-family: 'Rubik Variable';
+  --pokedex-gray: hsl(0, 0%, 80%);
+  --pokedex-green: hsl(143, 72%, 40%);
+  --pokedex-orange-deep: hsl(24, 95%, 45%);
+  --pokedex-purple: hsl(278, 64%, 55%);
+  /* Added neutrals/accents */
   --pokedex-red: hsl(343.88, 90.95%, 43.33%);
   --pokedex-white: hsl(0, 0%, 89.02%);
   --pokedex-yellow: hsl(52.24, 100%, 50%);

@@ -33,9 +33,9 @@ deno run build
 ```sh
 deno run preview
 ```
-### Check Code (Biome)
+### Fix Code (Biome)
 ```sh
-deno run check
+deno run fix
 ```
 ### See Orphans (Knip)
 ```sh

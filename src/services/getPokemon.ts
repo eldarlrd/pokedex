@@ -27,7 +27,7 @@ const getPokemon = async (inputName: string): Promise<Pokemon> => {
       console.error(error);
 
       throw new Error(ERRORS.notFound);
-    } else if (error instanceof Error) throw new Error(error.message);
+    } else if (error instanceof Error) throw new Error(ERRORS.requestFailed);
 
     throw error;
   }

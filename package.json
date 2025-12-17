@@ -1,6 +1,6 @@
 {
   "name": "pokedex",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "keywords": [
@@ -18,7 +18,7 @@
     "preview": "rsbuild preview",
     "spec": "jasmine",
     "deployer": "deno run build && gh-pages -b prod -m 'build(prod): deployment' -d dist",
-    "check": "biome check --write",
+    "fix": "biome check --write",
     "orphans": "knip --cache"
   },
   "dependencies": {
