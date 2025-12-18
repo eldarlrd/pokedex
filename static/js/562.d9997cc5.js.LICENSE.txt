@@ -1,0 +1,10 @@
+/*!
+ * jQuery JavaScript Library v4.0.0-rc.1
+ * https://jquery.com/
+ *
+ * Copyright OpenJS Foundation and other contributors
+ * Released under the MIT license
+ * https://jquery.com/license/
+ *
+ * Date: 2025-08-11T16:40Z
+ */
