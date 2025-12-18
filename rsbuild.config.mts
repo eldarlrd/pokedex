@@ -42,7 +42,7 @@ export default defineConfig({
       'og:description': 'A Pokémon search app',
       'og:url': 'https://eldarlrd.is-a.dev/pokedex',
       'og:image':
-        'https://repository-images.githubusercontent.com/1109857247/12ca2eaa-d534-4de9-85d1-d1bef125b644'
+        'https://repository-images.githubusercontent.com/1109857247/b06c929f-ef80-40b4-b9bd-39ce2030e2cd'
     },
     tags: [
       {
