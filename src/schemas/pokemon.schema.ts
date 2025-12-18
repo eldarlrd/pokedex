@@ -18,10 +18,6 @@ const pokemonSchema = create((data: Pokemon) => {
     enforce(data.weight).isNumeric();
   });
 
-  test('baseExperience', () => {
-    enforce(data.baseExperience).isNumeric();
-  });
-
   test('frontDefault', () => {
     enforce(data.sprites.frontDefault).isString().isNotBlank();
   });

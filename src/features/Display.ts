@@ -89,10 +89,6 @@ const showPokemon = (p: Pokemon): void => {
       <figcaption class='display-title'>
         <span class='title-left'>
           <span class='pokemon-name'>${genderCheck(capFirst(p.name))}</span>
-          <span class='pokemon-xp'>
-            <span class='material-icons'>military_tech</span>
-            <span class='xp-value'>${p.baseExperience}</span>
-          </span>
         </span>
         <span class='pokemon-id'>#${String(p.id).padStart(4, '0')}</span>
       </figcaption>

@@ -10,7 +10,6 @@ describe('getPokemon', () => {
       name: 'pikachu',
       weight: 60,
       height: 4,
-      base_experience: 112,
       sprites: {
         front_default: 'img_url'
       },
@@ -70,7 +69,6 @@ describe('getPokemon', () => {
     );
     expect(result.id).toBe(25);
     expect(result.name).toBe('pikachu');
-    expect(result.baseExperience).toBe(112);
     expect(result.sprites.frontDefault).toBe('img_url');
     expect(result.stats[0].baseStat).toBe(35);
     expect(result.types[0].type.name).toBe('electric');
@@ -95,7 +93,6 @@ describe('getPokemon', () => {
       name: 'pikachu',
       weight: 69,
       height: 7,
-      base_experience: 64,
       sprites: {
         front_default: 'img_url'
       },
