@@ -17,40 +17,45 @@ const toLabel = (key: string): string =>
   })[key] ?? key;
 
 const capFirst = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
+const genderCheck = (s: string): string =>
+  s.replace(/-m$/i, ' ♂').replace(/-f$/i, ' ♀');
 
 const typeChip = (name: string): string => `
-  <span class='type-chip'>${capFirst(name)}</span>
+  <span class='type-chip type-chip--${name}'>${capFirst(name)}</span>
 `;
 
 const formatWeightLbs = (hectograms: number): string => {
-  // 1 hectogram = 0.1 kg; 1 kg = 2.2046226218 lbs
-  const lbs = (hectograms / 10) * 2.2046226218;
+  // * 1 hg = 0.1 kg; 1 kg = 2.2 lbs
+  const lbs = (hectograms / 10) * 2.2;
+
   return `${lbs.toFixed(1)} lbs`;
 };
 
-const formatHeightFeetInches = (decimeters: number): string => {
-  // 1 decimeter = 0.1 meter; 1 meter = 39.37007874 inches
-  const totalInches = Math.round((decimeters / 10) * 39.37007874);
-  const feet = Math.floor(totalInches / 12);
+const formatHeightFeet = (decimeters: number): string => {
+  // * 1 dm = 0.1 m; 1 m = 39.4" in
+  const totalInches = Math.round((decimeters / 10) * 39.4);
+  const feet = ~~(totalInches / 12);
   const inches = totalInches % 12;
+
   return `${feet}'${inches}"`;
 };
 
 const byStatName = (p: Pokemon): Record<string, number> =>
   p.stats.reduce<Record<string, number>>((acc, s) => {
     acc[s.stat.name] = s.baseStat;
+
     return acc;
   }, {});
 
-export const resetDisplay = (): void => {
-  const $root = $(`#${DISPLAY_ID}`);
-  $root.removeClass('is-active is-error is-success');
-  $root.empty();
+const resetDisplay = (): void => {
+  const root = $(`#${DISPLAY_ID}`);
+  root.removeClass('is-active is-error is-success');
+  root.empty();
 };
 
-export const showError = (message: string): void => {
-  const $root = $(`#${DISPLAY_ID}`);
-  $root
+const showError = (message: string): void => {
+  const root = $(`#${DISPLAY_ID}`);
+  root
     .removeClass('is-success')
     .addClass('is-error is-active')
     .html(`
@@ -61,9 +66,9 @@ export const showError = (message: string): void => {
     `);
 };
 
-export const showPokemon = (p: Pokemon): void => {
+const showPokemon = (p: Pokemon): void => {
   const stats = byStatName(p);
-  const $root = $(`#${DISPLAY_ID}`);
+  const root = $(`#${DISPLAY_ID}`);
 
   const statsHtml = ORDERED_STATS.map(
     key => `
@@ -77,14 +82,14 @@ export const showPokemon = (p: Pokemon): void => {
 
   const typesHtml = p.types.map(t => typeChip(t.type.name)).join('');
 
-  $root
+  root
     .removeClass('is-error')
     .addClass('is-success is-active')
     .html(`
       <figcaption class='display-title'>
         <span class='title-left'>
-          <span class='pokemon-name'>${capFirst(p.name)}</span>
-          <span class='pokemon-xp' title='Base experience'>
+          <span class='pokemon-name'>${genderCheck(capFirst(p.name))}</span>
+          <span class='pokemon-xp'>
             <span class='material-icons'>military_tech</span>
             <span class='xp-value'>${p.baseExperience}</span>
           </span>
@@ -112,16 +117,15 @@ export const showPokemon = (p: Pokemon): void => {
       <div class='display-footer'>
         <div class='meta meta--size'>
           <span class='material-icons'>straighten</span>
-          <span class='meta-label'>Height</span>
-          <span class='meta-value'>${formatHeightFeetInches(p.height)}</span>
+          <span class='meta-value'>${formatHeightFeet(p.height)}</span>
         </div>
         <div class='meta meta--weight'>
           <span class='material-icons'>fitness_center</span>
-          <span class='meta-label'>Weight</span>
           <span class='meta-value'>${formatWeightLbs(p.weight)}</span>
         </div>
       </div>
     `);
 };
 
+export { resetDisplay, showError, showPokemon };
 export default Display;

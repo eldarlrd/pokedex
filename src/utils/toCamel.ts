@@ -1,4 +1,4 @@
-import type { Camelize } from '@/models/pokemon.model.ts';
+import type { Camelize } from '../models/pokemon.model.ts';
 
 const toCamel = <T>(obj: unknown): Camelize<T> => {
   if (obj === null || typeof obj !== 'object') return obj as Camelize<T>;

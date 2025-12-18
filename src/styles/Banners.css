@@ -8,10 +8,10 @@ footer {
     font-weight: 600;
 
     text-shadow:
-      -0.125rem -0.125rem 0 var(--pokedex-blue),
-      0.125rem -0.125rem 0 var(--pokedex-blue),
-      -0.125rem 0.125rem 0 var(--pokedex-blue),
-      0.125rem 0.125rem 0 var(--pokedex-blue);
+      -0.125rem -0.125rem 0 var(--pokedex-navy),
+      0.125rem -0.125rem 0 var(--pokedex-navy),
+      -0.125rem 0.125rem 0 var(--pokedex-navy),
+      0.125rem 0.125rem 0 var(--pokedex-navy);
   }
 
   & a {

@@ -1,5 +1,5 @@
 import { create, enforce, test } from 'vest';
-import type { Pokemon } from '@/models/pokemon.model.ts';
+import type { Pokemon } from '../models/pokemon.model.ts';
 
 const pokemonSchema = create((data: Pokemon) => {
   test('id', () => {

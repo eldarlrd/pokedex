@@ -11,9 +11,9 @@ type Camelize<T> =
 
 interface PokemonStats {
   hp: 'HP';
+  speed: 'SPD';
   attack: 'ATK';
   defense: 'DEF';
-  speed: 'SPD';
   'special-attack': 'SpA';
   'special-defense': 'SpD';
 }

@@ -1,6 +1,8 @@
 @import url('styles/_variables.css');
 @import url('styles/Banners.css');
 @import url('styles/Features.css');
+@import url('styles/Stats.css');
+@import url('styles/Types.css');
 
 :root {
   scroll-behavior: smooth;
@@ -18,8 +20,17 @@ body {
 
 section {
   min-height: 100dvh;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 main {
   background: var(--pokedex-red) !important;
+  max-width: 98%;
+  min-width: 21rem;
+  width: fit-content;
+
+  @media (min-width: 32rem) {
+    width: 30.25rem;
+  }
 }

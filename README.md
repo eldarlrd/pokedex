@@ -2,7 +2,7 @@
 [![Version](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/eldarlrd/pokedex/main/package.json&query=version&logo=git-extensions&label=version&labelColor=475569&color=0284c7)](https://github.com/eldarlrd/pokedex/blob/main/package.json)
 [![License](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/eldarlrd/pokedex/main/package.json&query=license&logo=open-source-initiative&logoColor=fff&label=license&labelColor=475569&color=c026d3)](https://github.com/eldarlrd/pokedex/blob/main/LICENSE)
 
-> Pokédex is a simple search app made with
+> Pokédex is a simple PWA search app made with
 > - **[TypeScript](https://typescriptlang.org)**
 > - **[jQuery v4](https://jquery.com)**
 > - **[Axios](https://axios-http.com)**

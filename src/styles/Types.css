@@ -1,0 +1,140 @@
+:root {
+  --type-bug: hsl(66, 70%, 45%);
+  --type-dark: hsl(30, 25%, 35%);
+  --type-dragon: var(--pokedex-purple);
+  --type-electric: var(--pokedex-yellow);
+  --type-fairy: hsl(340, 70%, 75%);
+  --type-fighting: var(--pokedex-red);
+  --type-fire: color-mix(
+    in oklab,
+    var(--pokedex-orange),
+    var(--pokedex-red) 75%
+  );
+  --type-flying: hsl(260, 70%, 70%);
+  --type-ghost: hsl(269, 30%, 50%);
+  --type-grass: var(--pokedex-green);
+  --type-ground: hsl(40, 64%, 60%);
+  --type-ice: var(--pokedex-cyan);
+  --type-normal: var(--pokedex-gray);
+  --type-poison: var(--pokedex-purple);
+  --type-psychic: hsl(340, 90%, 60%);
+  --type-rock: hsl(42, 48%, 48%);
+  --type-steel: hsl(240, 10%, 72%);
+  --type-water: var(--pokedex-navy);
+}
+
+.type-chip {
+  border-radius: 32rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.type-chip--normal {
+  background: var(--type-normal);
+  border: 1px solid var(--type-normal);
+  color: var(--pokedex-black);
+}
+
+.type-chip--fire {
+  background: var(--type-fire);
+  border: 1px solid var(--type-fire);
+  color: var(--pokedex-white);
+}
+
+.type-chip--water {
+  background: var(--type-water);
+  border: 1px solid var(--type-water);
+  color: var(--pokedex-white);
+}
+
+.type-chip--electric {
+  background: var(--type-electric);
+  border: 1px solid var(--type-electric);
+  color: var(--pokedex-black);
+}
+
+.type-chip--grass {
+  background: var(--type-grass);
+  border: 1px solid var(--type-grass);
+  color: var(--pokedex-white);
+}
+
+.type-chip--ice {
+  background: var(--type-ice);
+  border: 1px solid var(--type-ice);
+  color: var(--pokedex-white);
+}
+
+.type-chip--fighting {
+  background: var(--type-fighting);
+  border: 1px solid var(--type-fighting);
+  color: var(--pokedex-white);
+}
+
+.type-chip--poison {
+  background: var(--type-poison);
+  border: 1px solid var(--type-poison);
+  color: var(--pokedex-white);
+}
+
+.type-chip--ground {
+  background: var(--type-ground);
+  border: 1px solid var(--type-ground);
+  color: var(--pokedex-black);
+}
+
+.type-chip--flying {
+  background: var(--type-flying);
+  border: 1px solid var(--type-flying);
+  color: var(--pokedex-white);
+}
+
+.type-chip--psychic {
+  background: var(--type-psychic);
+  border: 1px solid var(--type-psychic);
+  color: var(--pokedex-white);
+}
+
+.type-chip--bug {
+  background: var(--type-bug);
+  border: 1px solid var(--type-bug);
+  color: var(--pokedex-black);
+}
+
+.type-chip--rock {
+  background: var(--type-rock);
+  border: 1px solid var(--type-rock);
+  color: var(--pokedex-white);
+}
+
+.type-chip--ghost {
+  background: var(--type-ghost);
+  border: 1px solid var(--type-ghost);
+  color: var(--pokedex-white);
+}
+
+.type-chip--dragon {
+  background: var(--type-dragon);
+  border: 1px solid var(--type-dragon);
+  color: var(--pokedex-white);
+}
+
+.type-chip--dark {
+  background: var(--type-dark);
+  border: 1px solid var(--type-dark);
+  color: var(--pokedex-white);
+}
+
+.type-chip--steel {
+  background: var(--type-steel);
+  border: 1px solid var(--type-steel);
+  color: var(--pokedex-black);
+}
+
+.type-chip--fairy {
+  background: var(--type-fairy);
+  border: 1px solid var(--type-fairy);
+  color: var(--pokedex-white);
+}

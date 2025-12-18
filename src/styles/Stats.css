@@ -1,0 +1,36 @@
+.stat.stat--hp .stat-icon {
+  color: var(--pokedex-red);
+}
+
+.stat.stat--attack .stat-icon {
+  color: color-mix(in oklab, var(--pokedex-red), var(--pokedex-yellow) 50%);
+}
+
+.stat.stat--defense .stat-icon {
+  color: var(--pokedex-navy);
+}
+
+.stat.stat--special-attack .stat-icon {
+  color: var(--pokedex-purple);
+}
+
+.stat.stat--special-defense .stat-icon {
+  color: var(--pokedex-green);
+}
+
+.stat.stat--speed .stat-icon {
+  color: var(--pokedex-yellow);
+}
+
+.stat.stat--meta .stat-icon {
+  color: color-mix(in oklab, var(--pokedex-black), transparent 35%);
+}
+
+.stat.stat--meta .stat-label {
+  color: color-mix(in oklab, var(--pokedex-black), transparent 45%);
+  font-weight: 500;
+}
+
+.stat.stat--meta .stat-value {
+  font-weight: 600;
+}

@@ -1,8 +1,8 @@
 import axios from 'axios';
-import ERRORS from '@/config/errors.ts';
-import type { Pokemon, PokemonRaw } from '@/models/pokemon.model.ts';
-import pokemonSchema from '@/schemas/pokemon.schema.ts';
-import toCamel from '@/utils/toCamel';
+import ERRORS from '../config/errors.ts';
+import type { Pokemon, PokemonRaw } from '../models/pokemon.model.ts';
+import pokemonSchema from '../schemas/pokemon.schema.ts';
+import toCamel from '../utils/toCamel.ts';
 
 const PROXY_BASE_URL = 'https://pokeapi-proxy.freecodecamp.rocks/api/pokemon';
 
@@ -27,7 +27,10 @@ const getPokemon = async (inputName: string): Promise<Pokemon> => {
       console.error(error);
 
       throw new Error(ERRORS.notFound);
-    } else if (error instanceof Error) throw new Error(ERRORS.requestFailed);
+    } else if (error instanceof Error) {
+      if (error.message === ERRORS.invalid) throw error;
+      throw new Error(ERRORS.requestFailed);
+    }
 
     throw error;
   }

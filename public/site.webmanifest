@@ -9,7 +9,7 @@
   "theme_color": "#d30a40",
   "background_color": "#14161a",
   "description": "A Pokémon search app",
-  "start_url": "https://eldarlrd.github.io/pokedex/",
+  "start_url": "https://eldarlrd.is-a.dev/pokedex/",
   "icons": [
     {
       "src": "favicon.png",

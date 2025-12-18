@@ -1,7 +1,20 @@
+import { InjectManifest } from '@aaroon/workbox-rspack-plugin';
 import { defineConfig } from '@rsbuild/core';
 
 // https://rsbuild.rs/config
 export default defineConfig({
+  tools: {
+    rspack: {
+      plugins: [
+        new InjectManifest({
+          swSrc: '/src/sw.ts',
+          swDest: 'sw.js',
+          mode: 'production',
+          include: ['**/*.{html,css,js,png,webp,woff2,webmanifest}']
+        })
+      ]
+    }
+  },
   dev: {
     hmr: false
   },
