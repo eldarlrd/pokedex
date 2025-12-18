@@ -29,13 +29,13 @@
   },
   "devDependencies": {
     "@aaroon/workbox-rspack-plugin": "^0.3.2",
-    "@biomejs/biome": "2.3.8",
-    "@rsbuild/core": "^1.6.14",
+    "@biomejs/biome": "2.3.10",
+    "@rsbuild/core": "^1.6.15",
     "@types/jasmine": "^5.1.13",
     "@types/jquery": "^3.5.33",
     "gh-pages": "^6.3.0",
     "jasmine": "^5.13.0",
-    "knip": "^5.72.0",
+    "knip": "^5.75.1",
     "typescript": "^5.9.3",
     "workbox-core": "^7.4.0",
     "workbox-precaching": "^7.4.0"
